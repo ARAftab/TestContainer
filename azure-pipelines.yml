@@ -20,6 +20,11 @@ stages:
     pool:
       vmImage: windows-latest
     steps:
+    - task: NodeTool@0
+      inputs:
+        versionSource: 'spec'
+        versionSpec: '6.x'
+        checkLatest: true
     - task: Docker@2
       displayName: Build an image
       inputs:
